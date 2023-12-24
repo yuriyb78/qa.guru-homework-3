@@ -1,7 +1,9 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -40,15 +42,15 @@ public class fillFormTest {
 
         //Проверка правильности сохранения заполненных полей
         $(".modal-open").shouldBe(visible);  // проверка открытия модального окна
-        $(".table").find(byText("TestFirstName TestLastName"));  // Проверка Имени и Фамилии
-        $(".table").find(byText("TestUserEmail@email.ru"));  // Проверка электронного адреса
-        $(".table").find(byText("9990001122"));  // Проверка номера телефона
-        $(".table").find(byText("25 June 1978"));  // Проверка даты рождения
-        $(".table").find(byText("Arts"));  // Проверка предмета
-        $(".table").find(byText("Sports, Reading, Music"));  // Проверка хобби
-        $(".table").find(byText("01.jpg"));  // Проверка загруженного файла
-        $(".table").find(byText("112233, Какая-то область, г. Какой-то, ул. Какая-то д.1, кв.1"));  // Проверка введенного адреса
-        $(".table").find(byText("NCR Delhi"));  // Проверка штата и города
+        $(".table").shouldHave(text("TestFirstName TestLastName"));  // Проверка Имени и Фамилии
+        $(".table").shouldHave(text("TestUserEmail@email.ru"));  // Проверка электронного адреса
+        $(".table").shouldHave(text("9990001122"));  // Проверка номера телефона
+        $(".table").shouldHave(text("25 June,1978"));  // Проверка даты рождения
+        $(".table").shouldHave(text("Arts"));  // Проверка предмета
+        $(".table").shouldHave(text("Sports, Reading, Music"));  // Проверка хобби
+        $(".table").shouldHave(text("01.jpg"));  // Проверка загруженного файла
+        $(".table").shouldHave(text("112233, Какая-то область, г. Какой-то, ул. Какая-то д.1, кв.1"));  // Проверка введенного адреса
+        $(".table").shouldHave(text("NCR Delhi"));  // Проверка штата и города
     }
 }
 
