@@ -2,7 +2,6 @@
 build/
 .idea
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
@@ -11,7 +10,6 @@ build/
 *.ipr
 *.log
 out/
-!**/src/main/**/out/
 !**/src/test/**/out/
 settings.gradle
 gradlew.bat
@@ -26,7 +24,6 @@ src/main
 .springBeans
 .sts4-cache
 bin/
-!**/src/main/**/bin/
 !**/src/test/**/bin/
 
 ### NetBeans ###
