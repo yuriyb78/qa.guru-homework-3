@@ -1,17 +1,15 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class fillFormTest {
+public class FillFormTest {
 
     @Test
-     void fillForm() {
+     void fillFormTest() {
         // Открыть браузер на заданной странице
         Configuration.pageLoadStrategy = "eager";
         open("https://demoqa.com/automation-practice-form");  // Открытие браузера на нужной странице
